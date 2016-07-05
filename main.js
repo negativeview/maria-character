@@ -7,5 +7,5 @@ const FifthEdition = require('./fifth-edition.js');
 module.exports = {
 	Character: Character,
 	D20: D20,
-	5E: FifthEdition
+	FifthEdition: FifthEdition
 };
