@@ -56,7 +56,8 @@ class D20Character extends BaseCharacter {
 						enumerable: false,
 						configurable: false,
 						get: () => {
-							return data[score] ? data[score] : 0
+							console.log(data[score]);
+							return data[score] ? data[score].toString() : 0
 						}
 					}
 				);
