@@ -47,19 +47,33 @@ class D20Character extends BaseCharacter {
 			(item, index, arr) => {
 				var score = item;
 
+				var tmp = {};
+
+				Object.defineProperty(
+					tmp,
+					'toString',
+					{
+						enumerable: false,
+						configurable: false,
+						get: () => {
+							return data[score] ? data[score] : 0
+						}
+					}
+				);
+
 				Object.defineProperty(
 					this.abilityScores,
 					score,
 					{
 						configurable: false,
 						enumerable: true,
-						value: data[score] ? data[score] : 0,
+						value: tmp,
 						writable: true
 					}
 				);
 
 				Object.defineProperty(
-					this.abilityScores[score],
+					tmp,
 					'modifier',
 					{
 						configurable: false,
