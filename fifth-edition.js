@@ -22,6 +22,31 @@ class FifthEditionCharacter extends D20Character {
 			}
 		);
 
+		Object.defineProperty(
+			this,
+			'ac',
+			{
+				enumerable: true,
+				configurable: false,
+				get: () => {
+					var baseAC = 10 + this.abilityScores['dex'].modifier;
+
+					for (var i = 0; i < this.features.length; i++) {
+						if (this.features[i].baseAC) {
+							baseAC = this.features[i].baseAC(this, baseAC);
+						}
+					}
+					for (var i = 0; i < this.items.length; i++) {
+						if (this.items[i].enabled && this.items[i].baseAC) {
+							baseAC = this.items[i].baseAC(this, baseAC);
+						}
+					}
+
+					return baseAC;
+				}
+			}
+		);
+
 		var skills = [
 			{
 				name: 'Acrobatics',
