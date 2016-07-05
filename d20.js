@@ -59,11 +59,11 @@ class D20Character extends BaseCharacter {
 				);
 
 				Object.defineProperty(
-					this.abilityScores,
-					score + 'Mod',
+					this.abilityScores[score],
+					'modifier',
 					{
 						configurable: false,
-						enumerable: true,
+						enumerable: false,
 						get: () => {
 							return Math.floor((this.abilityScores[score] - 10) / 2);
 						},
