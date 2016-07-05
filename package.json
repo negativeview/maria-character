@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/negativeview/maria-character/issues"
   },
-  "homepage": "https://github.com/negativeview/maria-character#readme"
+  "homepage": "https://github.com/negativeview/maria-character#readme",
+  "dependencies": {
+    "maria-serialize": "github:negativeview/maria-serialize"
+  }
 }

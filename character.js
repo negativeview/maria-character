@@ -1,7 +1,7 @@
 "use strict";
 
 const EventEmitter = require('events');
-const SerializeHelper = require('../serialize-helper.js');
+const SerializeHelper = require('maria-serialize');
 
 class Character extends EventEmitter {
 	constructor(data) {
