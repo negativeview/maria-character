@@ -42,7 +42,19 @@ class FifthEditionCharacter extends D20Character {
 						}
 					}
 
-					return baseAC;
+					var acBonus = 0;
+					for (var i = 0; i < this.features.length; i++) {
+						if (this.features[i].acBonus) {
+							acBonus = this.features[i].acBonus(this, acBonus);
+						}
+					}
+					for (var i = 0; i < this.items.length; i++) {
+						if (this.items[i].enabled && this.items[i].acBonus) {
+							acBonus = this.items[i].acBonus(this, acBonus);
+						}
+					}
+
+					return baseAC + acBonus;
 				}
 			}
 		);
