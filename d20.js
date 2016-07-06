@@ -83,7 +83,7 @@ class D20Character extends BaseCharacter {
 						get: () => {
 							return tmp;
 						},
-						set: (value) {
+						set: (value) => {
 							data[score] = value;
 						}
 						value: tmp,
