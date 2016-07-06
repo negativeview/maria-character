@@ -42,7 +42,6 @@ class D20Character extends BaseCharacter {
 		);
 
 		var scores = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
-
 		scores.forEach(
 			(item, index, arr) => {
 				var score = item;
@@ -81,6 +80,12 @@ class D20Character extends BaseCharacter {
 					{
 						configurable: false,
 						enumerable: true,
+						get: () => {
+							return tmp;
+						},
+						set: (value) {
+							data[score] = value;
+						}
 						value: tmp,
 						writable: true
 					}
