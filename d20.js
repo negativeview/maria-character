@@ -56,8 +56,21 @@ class D20Character extends BaseCharacter {
 						enumerable: false,
 						configurable: false,
 						get: () => {
-							console.log(data[score]);
-							return data[score] ? data[score].toString() : 0
+							return () => { return data[score] ? data[score] : "0"; }
+						}
+					}
+				);
+
+				Object.defineProperty(
+					tmp,
+					'valueOf',
+					{
+						enumerable: false,
+						configurable: false,
+						get: () => {
+							return () => {
+								return data[score] ? data[score].toString() : 0
+							}
 						}
 					}
 				);
