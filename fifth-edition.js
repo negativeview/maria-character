@@ -155,11 +155,15 @@ class FifthEditionCharacter extends D20Character {
 						enumerable: true,
 						configurable: false,
 						get: () => {
-							var base = this.abilityScores[skill.name].modifier;
-							if (this.proficiencies.indexOf(skill.name) !== -1) {
-								base += this.proficiencyBonus;
+							if (skill.abilityScore in this.abilityScores) {
+								var base = this.abilityScores[skill.abilityScore].modifier;
+								if (this.proficiencies.indexOf(skill.name) !== -1) {
+									base += this.proficiencyBonus;
+								}
+								return base;
+							} else {
+								throw new Error('No such ability score: ' + skill.abilityScore);
 							}
-							return base;
 						},
 						set: (newValue) => {
 							return false;
