@@ -85,8 +85,7 @@ class D20Character extends BaseCharacter {
 						},
 						set: (value) => {
 							data[score] = value;
-						}
-						value: tmp,
+						},
 						writable: true
 					}
 				);
