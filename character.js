@@ -1,6 +1,7 @@
 "use strict";
 
 const EventEmitter = require('events');
+const RollInput = require('maria-dice');
 const SerializeHelper = require('maria-serialize');
 
 class Character extends EventEmitter {
@@ -98,6 +99,19 @@ class Character extends EventEmitter {
 			}
 		);
 		delete data.features;
+	}
+
+	attack() {
+		for (var i = 0; i < this.items.length; i++) {
+			var item = this.items[i];
+			if (item.damage) {
+				var attackRoll = new RollInput({});
+				var attackRoll = "1d20 + 10";
+				var damageRoll = "1d6 + 5";
+
+
+			}
+		}
 	}
 }
 

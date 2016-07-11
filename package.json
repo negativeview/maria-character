@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/negativeview/maria-character#readme",
   "dependencies": {
+    "maria-dice": "github:negativeview/maria-dice",
     "maria-serialize": "github:negativeview/maria-serialize"
   }
 }
