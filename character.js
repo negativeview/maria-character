@@ -54,6 +54,17 @@ class Character extends EventEmitter {
 
 		Object.defineProperty(
 			this,
+			'status',
+			{
+				configurable: false,
+				enumerable: true,
+				value: {},
+				writable: true
+			}
+		);
+
+		Object.defineProperty(
+			this,
 			'actions',
 			{
 				configurable: false,
