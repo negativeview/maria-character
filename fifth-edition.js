@@ -24,6 +24,17 @@ class FifthEditionCharacter extends D20Character {
 
 		Object.defineProperty(
 			this,
+			'status',
+			{
+				configurable: false,
+				enumerable: true,
+				value: {},
+				writable: true
+			}
+		);
+
+		Object.defineProperty(
+			this,
 			'ac',
 			{
 				enumerable: true,
